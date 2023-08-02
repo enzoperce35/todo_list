@@ -1,1 +1,1 @@
-console.log('this is called from index.js')
+import "./index.css"
