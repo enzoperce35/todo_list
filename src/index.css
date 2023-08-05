@@ -1,3 +1,46 @@
-body {
-  background-color: blue;
+.content {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10vh 90vh;
+}
+
+.nav {
+  background-color: aliceblue;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 30vw 70vw;
+}
+
+.side-content {
+  background-color: aqua;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.aside-top {
+  background-color: deeppink;
+}
+
+.aside-middle {
+  background-color: gray;
+}
+
+.aside-top {
+  background-color: maroon;
+}
+
+.main-content {
+  background-color: crimson;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.todo {
+  background-color: cornflowerblue;
+}
+
+.projects {
+  background-color: darkslategrey;
 }
