@@ -1,10 +1,9 @@
 import { createTag } from "../../helper.js"
-import { toDo } from "./todo_tasks.js"
-import { projectToDo } from "./todo_projects.js"
+import { toDoCont } from "./todo_tasks.js"
 
 
 const mainContents = createTag('div', 'main-content')
 
-mainContents.append( toDo, projectToDo )
+mainContents.append( toDoCont )
 
 export { mainContents }
