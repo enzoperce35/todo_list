@@ -1,12 +1,11 @@
 import { createTag } from "../../helper"
 import { project } from "../../objects/class_project"
-import { storage } from "../../storage_module.js";
 
 
 function createNewProject() {
-  const proj = new project('sample project', 'This is a sample project description')
+  const proj = new project('new sample project using pubsub-js library', 'This is a sample project description')
 
-  storage.addToStorage(proj)
+  PubSub.publish( 'createBtnClicked', proj)
 }
 
 const projectHeader = (() => {

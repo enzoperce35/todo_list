@@ -1,13 +1,13 @@
 import { createTag } from "../../helper.js"
 import { toDo } from "../../objects/class_todo.js"
-import { storage } from "../../storage_module.js";
+
 
 const toDoList = createTag('ul', 'todo-list')
 
 function createNewItem() {
-  const todo = new toDo('sample todo', 'This is a sample todo description')
+  const todo = new toDo('new todo using Pubsub library', 'This is a sample todo description using Pubsub library')
 
-  storage.addToStorage(todo)
+  PubSub.publish( 'createBtnClicked', todo )
 }
 
 const createButton = (() => {

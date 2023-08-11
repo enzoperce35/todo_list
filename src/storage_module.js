@@ -1,5 +1,7 @@
 const storage = (() => {
 
+  PubSub.subscribe('createBtnClicked', addToStorage)
+
   function allStorage() {
     var values = [],
         keys = Object.keys(localStorage),
@@ -12,11 +14,11 @@ const storage = (() => {
     return values
   }
 
-  function addToStorage(newToDo) {
+  function addToStorage(_, newToDo) {
     localStorage.setItem(newToDo.title, JSON.stringify(newToDo))
-  }
 
-  return { addToStorage }
+    console.log(allStorage())
+  }
 
 })();
 
