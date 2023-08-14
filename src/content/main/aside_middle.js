@@ -1,33 +1,25 @@
-import { createTag } from "../../helper"
-import { project } from "../../objects/class_project"
-
-
-function createNewProject() {
-  const proj = new project('new sample project using pubsub-js library', 'This is a sample project description')
-
-  PubSub.publish( 'createBtnClicked', proj)
-}
+import { newEl } from "../../helpers/element_helper";
 
 const projectHeader = (() => {
-  const header = createTag('p', '', 'projects-header')
+  const header = newEl('p', '', 'projects-header')
   header.innerText = 'PROJECTS'
 
   return header
 })();
 
-const projectList = createTag('ul', 'project-list')
+const projectList = newEl('ul', 'project-list')
 
 const createButton = (() => {
-  const btn = createTag('button', '', 'add-project')
+  const btn = newEl('button', '', 'add-project')
   btn.innerText = 'Add Project'
-  btn.onclick = function() {createNewProject()}
+  btn.onclick = function() { PubSub.publish( 'createBtnClicked', 'proj' ) }
 
   return btn
 })();
 
 
 const components = (() => {
-  const container = createTag('div', 'project-cont')
+  const container = newEl('div', 'project-cont')
 
   container.append(projectHeader, projectList, createButton)
 
@@ -35,7 +27,7 @@ const components = (() => {
 })();
 
 
-const asideMiddle = createTag('div', 'aside-middle')
+const asideMiddle = newEl('div', 'aside-middle')
 asideMiddle.appendChild(components)
 
 export { asideMiddle }

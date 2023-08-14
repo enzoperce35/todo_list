@@ -1,6 +1,6 @@
-import { createTag  } from "../../helper"
+import { newEl } from "../../helpers/element_helper"
 
 
-const asideTop = createTag('div', 'aside-top')
+const asideTop = newEl('div', 'aside-top')
 
 export { asideTop }

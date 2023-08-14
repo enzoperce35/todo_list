@@ -72,3 +72,11 @@
   font-size: 1vh;
 }
 
+#todo-form, #proj-form {
+  background-color: olivedrab;
+  height: 88vh;
+  width: 40vw;
+  position: absolute;
+  top: 11.5vh;
+  right: 10%;
+}

@@ -1,5 +1,6 @@
-import { createTag } from "../helper.js"
+import { newEl } from "../helpers/element_helper"
 
-const nav = createTag('div', 'nav')
+
+const nav = newEl('div', 'nav')
 
 export { nav }

@@ -1,7 +1,5 @@
 const storage = (() => {
 
-  PubSub.subscribe('createBtnClicked', addToStorage)
-
   function allStorage() {
     var values = [],
         keys = Object.keys(localStorage),
