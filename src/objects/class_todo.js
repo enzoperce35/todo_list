@@ -1,6 +1,6 @@
-class toDo {
+class todo {
   constructor(title, description) {
-    this.type = 'task-todo'
+    this.type = 'todo'
     this.title = title
     this.description = description
   }
@@ -22,4 +22,4 @@ class toDo {
   }
 }
 
-export { toDo }
+export { todo }

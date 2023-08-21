@@ -1,8 +1,8 @@
 import { form } from "../../objects/form_factory.js";
 import { showForm } from "../../helpers/form_helper.js";
 
-const toDoForm = form('todo', 'New Todo').compose( 'title', 'description', 'submit'),
-      projForm = form('proj', 'New Project').compose( 'title', 'description', 'submit');
+const toDoForm = form('todo').addFields( 'title', 'description'),
+      projForm = form('project').addFields( 'title', 'description');
 
 PubSub.subscribe( 'createBtnClicked', showForm )
 

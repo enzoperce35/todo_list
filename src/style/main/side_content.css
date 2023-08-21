@@ -1,0 +1,30 @@
+.side-content {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.side-content > * {
+  height: calc(90vh/3);
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.sideUl-cont {
+  height: 100%;
+  padding: 2vh;
+
+}
+
+.side-header {
+  font-size: 2vh;
+}
+
+.project-list {
+  font-size: 2vh;
+  grid-gap: 3vh;
+}
+
+#add-project {
+  padding: .3vh;
+  font-size: 1vh;
+}

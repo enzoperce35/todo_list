@@ -1,4 +1,4 @@
-import { newEl } from "../../helpers/element_helper.js"
+import { newEl } from "../../../helpers/element_helper.js"
 import { asideTop } from "./aside_top.js"
 import { asideMiddle } from "./aside_middle.js"
 import { asideBottom } from "./aside_bottom.js"

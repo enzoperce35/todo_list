@@ -16,4 +16,19 @@ function showEl(el) {
   el.hidden = false
 }
 
-export { newEl, hideEl, showEl }
+function listHeader(group, text = '') {
+  const header = newEl('p', `${group}-header`)
+  header.innerText = text
+
+  return header
+}
+
+function createButton(obj) {
+  const btn = newEl('button', 'createBtn', '')
+  btn.innerText = 'Add'
+  btn.onclick = function() { PubSub.publish( 'createBtnClicked', obj ) }
+
+  return btn
+};
+
+export { newEl, hideEl, showEl, listHeader, createButton }

@@ -1,0 +1,7 @@
+@import "./main_content.css";
+@import "./side_content.css";
+
+.main {
+  display: grid;
+  grid-template-columns: 30vw 70vw;
+}

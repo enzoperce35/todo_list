@@ -1,32 +1,40 @@
-import { newEl, hideEl } from "../helpers/element_helper";
-import { formHeader, userInput, inputField } from "../helpers/form_helper";
+import { helper } from "../helpers/helper";
 
 
-const form = (obj, head = '') => {
+const form = (obj) => {
 
-  const header = formHeader(head),
-         title = inputField('text', obj, 'title'),
-   description = inputField('text', obj, 'description'),
-        submit = userInput('submit', obj, 'Submit');
-
-  function compose(...args) {
-    for(let i=0; i < args.length; i++) {
-      components.append(eval(args[i]))
-    }
-
-    return components
-  }
-
-  const components = (() => {
-    const formEl = newEl('form', '', `${obj}-form`)
-    formEl.append(header)
-
-    hideEl(formEl)
+  let formObj = (() => {
+    const formEl = helper.newEl('form', '', `${obj}-form`)
+    helper.hideEl(formEl)
 
     return formEl
   })();
 
-  return { compose }
+  const header = helper.formHeader( obj ),
+         title = helper.inputField('text', obj, 'title'),
+   description = helper.inputField('text', obj, 'description'),
+        submit = helper.userInput('submit', obj, 'Submit');
+
+  function addFields(...args) {
+
+    args.forEach( arg => formObj.append( eval(arg) ) )
+
+    formObj.prepend(header)
+    formObj.append(submit)
+
+    return formObj
+  }
+
+  (function submitHandler() {
+    formObj.onsubmit = (e) => {
+
+      e.preventDefault()
+
+      PubSub.publish( 'formSubmitted', {'formData': formObj, 'formObj': obj} )
+    }
+  })();
+
+  return {formObj, addFields}
 }
 
 export { form }

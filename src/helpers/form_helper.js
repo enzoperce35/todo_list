@@ -1,9 +1,10 @@
+import { titleize } from "./application_helper";
 import { newEl, showEl, hideEl } from "./element_helper";
 
 
-function formHeader(head) {
+function formHeader(obj) {
   const header = newEl('p')
-  header.innerHTML = head
+  header.innerHTML = 'New ' + titleize(obj)
 
   const cont = newEl('div')
   cont.append(header)

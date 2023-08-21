@@ -1,6 +1,6 @@
 class project {
   constructor(title, description) {
-    this.type = 'project-todo'
+    this.type = 'project'
     this.title = title
     this.description = description
   }
